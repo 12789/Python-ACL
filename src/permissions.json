@@ -1,0 +1,53 @@
+{
+    "roles": [
+        {
+            "name": "customer"
+        },
+        {
+            "name": "employee",
+            "inheritFrom": "customer"
+        },
+        {
+            "name": "manager",
+            "inheritFrom": "employee"
+        }
+    ],
+    "permissions": [
+        {
+            "resources": [
+                "contact_details",
+                "profile"
+            ],
+            "roles": [
+                "customer"
+            ],
+            "privileges": [
+                "read",
+                "write"
+            ]
+        },
+        {
+            "resources": [
+                "time_card"
+            ],
+            "roles": [
+                "employee"
+            ],
+            "privileges": [
+                "read",
+                "write"
+            ]
+        },
+        {
+            "resources": [
+                "time_card"
+            ],
+            "roles": [
+                "manager"
+            ],
+            "privileges": [
+                "approve"
+            ]
+        }
+    ]
+}
